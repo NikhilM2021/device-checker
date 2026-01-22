@@ -40,11 +40,11 @@
     "prettier": "prettier \"**/*.{css,html,ts,js,java}\" --plugin=prettier-plugin-java",
     "swiftlint": "node-swiftlint",
     "docgen": "docgen --api DeviceCheckerPluginPlugin --output-readme README.md --output-json dist/docs.json",
-    "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.mjs",
+    "build1": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.mjs",
 
     
     "docgen2": "docgen --api DeviceCheckerPlugin --output-readme README.md --output-json dist/docs.json",
-    "build2": "npm run clean && npm run docgen2 && tsc && rollup -c rollup.config.mjs",
+    "build": "npm run clean && npm run docgen2 && tsc && rollup -c rollup.config.mjs",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
     "prepublishOnly": "npm run build"
