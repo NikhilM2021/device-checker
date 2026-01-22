@@ -1,0 +1,25 @@
+{
+  "api": {
+    "name": "DeviceCheckerPlugin",
+    "slug": "devicecheckerplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "getDeviceDetail",
+        "signature": "() => Promise<{ isEmulator: boolean; isRooted: boolean; isSecure: boolean; }>",
+        "parameters": [],
+        "returns": "Promise<{ isEmulator: boolean; isRooted: boolean; isSecure: boolean; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "getdevicedetail"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
