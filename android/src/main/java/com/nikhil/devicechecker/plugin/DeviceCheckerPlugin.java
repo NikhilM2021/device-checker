@@ -7,20 +7,24 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 import com.nikhil.devicecheckerlibrary.DeviceChecker;
 
 @CapacitorPlugin(name = "DeviceChecker")
-public class DeviceCheckerPlugin : Plugin() {
+public class DeviceCheckerPlugin extends Plugin {
 
-    @PluginMethod
      @PluginMethod
     public void getDeviceDetail(PluginCall call) {
+        // Get Android context
         Context context = getContext();
+
+        // Use your AAR library
         DeviceChecker checker = new DeviceChecker(context);
         DeviceDetail result = checker.getDeviceDetail();
 
+        // Convert result to JSObject to return to Ionic
         JSObject ret = new JSObject();
         ret.put("isEmulator", result.isEmulator());
         ret.put("isRooted", result.isRooted());
         ret.put("isSecure", result.isSecure());
 
+        // Return result to Capacitor
         call.resolve(ret);
     }
     // fun getDeviceDetail(call: PluginCall) {
