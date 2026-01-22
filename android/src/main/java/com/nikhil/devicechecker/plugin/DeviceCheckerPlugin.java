@@ -3,16 +3,28 @@ package com.nikhil.devicechecker.plugin;
 // import com.getcapacitor.Logger;
 
 import com.getcapacitor.*;
-import com.getcapacitor.annotation.CapacitorPlugin;
+
+
 import com.nikhil.devicecheckerlibrary.DeviceChecker;
+
+import com.nikhil.devicecheckerlibrary.DeviceDetail;
+
+
+import android.content.Context;
+
+import com.getcapacitor.JSObject;
+import com.getcapacitor.Plugin;
+import com.getcapacitor.PluginCall;
+import com.getcapacitor.annotation.CapacitorPlugin;
+import com.getcapacitor.annotation.PluginMethod;
 
 @CapacitorPlugin(name = "DeviceChecker")
 public class DeviceCheckerPlugin extends Plugin {
 
      @PluginMethod
     public void getDeviceDetail(PluginCall call) {
-        // Get Android context
-        Context context = getContext();
+        // Get Android context safely
+        Context context = getActivity().getApplicationContext();
 
         // Use your AAR library
         DeviceChecker checker = new DeviceChecker(context);
